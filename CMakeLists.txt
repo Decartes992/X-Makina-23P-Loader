@@ -6,5 +6,7 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(X_Makina_23P_Loader
-        main.c
-        main.h)
+        loader.c
+        loader.h
+        memory.c
+        srecord.c)

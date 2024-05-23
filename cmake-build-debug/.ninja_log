@@ -1,3 +1,9 @@
 # ninja log v5
 4	96	7381387699412283	CMakeFiles/X_Makina_23P_Loader.dir/main.c.obj	7065dc606480a14e
 97	207	7381387700502800	X_Makina_23P_Loader.exe	6179dabfde9f2be7
+2	68	7381397033997526	CMakeFiles/X_Makina_23P_Loader.dir/loader.c.obj	5859967be3a34594
+6	69	7381397033997526	CMakeFiles/X_Makina_23P_Loader.dir/memory.c.obj	ccdfcb173c9edf32
+9	74	7381397034052742	CMakeFiles/X_Makina_23P_Loader.dir/srecord.c.obj	165750cb11baa399
+74	151	7381397034795654	X_Makina_23P_Loader.exe	156ce79b769380a4
+3	60	7381399069787256	CMakeFiles/X_Makina_23P_Loader.dir/loader.c.obj	5859967be3a34594
+61	152	7381399070667569	X_Makina_23P_Loader.exe	156ce79b769380a4

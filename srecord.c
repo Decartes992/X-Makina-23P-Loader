@@ -1,19 +1,11 @@
 //
 // Created by Decartes on 2024-05-23.
 //
-
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "loader.h"
 
-#define IMEM_SIZE 65536
-#define DMEM_SIZE 65536
-
-unsigned short IMEM[IMEM_SIZE]; // 64 KiB of word-addressable instruction memory
-unsigned char DMEM[DMEM_SIZE];  // 64 KiB of byte-addressable data memory
-
-// Function to parse S-Records and load them into memory
 void loadSRecord(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
@@ -51,32 +43,4 @@ void loadSRecord(const char *filename) {
         }
     }
     fclose(file);
-}
-
-// Function to display memory contents
-void displayMemory() {
-    printf("Instruction Memory (IMEM):\n");
-    for (int i = 0; i < IMEM_SIZE; i += 16) {
-        printf("%04X: ", i);
-        for (int j = 0; j < 16; j++) {
-            printf("%04X ", IMEM[i + j]);
-        }
-        printf("\n");
-    }
-
-    printf("\nData Memory (DMEM):\n");
-    for (int i = 0; i < DMEM_SIZE; i += 16) {
-        printf("%04X: ", i);
-        for (int j = 0; j < 16; j++) {
-            printf("%02X ", DMEM[i + j]);
-        }
-        printf("\n");
-    }
-}
-
-int main() {
-    const char *filename = "program.xme";
-    loadSRecord(filename);
-    displayMemory();
-    return 0;
 }
