@@ -1,6 +1,12 @@
-//
-// Created by Decartes on 2024-05-23.
-//
+/*
+Name: Iftekhar Rafi
+ID: B00871031
+Course: ECED 3403 Computer Architecture
+Instructor: Larry Hughes
+
+File Name: loader.h
+File Purpose: This file contains the declarations of functions and memory arrays used in the project.
+*/
 #ifndef LOADER_H
 #define LOADER_H
 

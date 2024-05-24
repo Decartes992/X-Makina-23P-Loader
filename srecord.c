@@ -1,6 +1,14 @@
+/*
+Name: Iftekhar Rafi
+ID: B00871031
+Course: ECED 3403 Computer Architecture
+Instructor: Larry Hughes
+
+File Name: srecord.c
+File Purpose: This file contains the function to load S-Records from a file and store them in memory.
+*/
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "loader.h"
 
 void loadSRecord(const char *filename) {

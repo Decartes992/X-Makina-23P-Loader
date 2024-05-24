@@ -1,3 +1,13 @@
+/*
+Name: Iftekhar Rafi
+ID: B00871031
+Course: ECED 3403 Computer Architecture
+Instructor: Larry Hughes
+
+File Name: memory.c
+File Purpose: This file contains the memory arrays and a function to display a range of memory.
+*/
+
 #include <stdio.h>
 #include "loader.h"
 

@@ -1,6 +1,12 @@
-//
-// Created by Decartes on 2024-05-24.
-//
+/*
+Name: Iftekhar Rafi
+ID: B00871031
+Course: ECED 3403 Computer Architecture
+Instructor: Larry Hughes
+
+File Name: manager.c
+File Purpose: This file contains the manager function which handles user input for memory display and calls the loadSRecord function to load S-Records from a file into memory.
+*/
 #include <stdio.h>
 #include "loader.h"
 
