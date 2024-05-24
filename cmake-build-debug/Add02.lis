@@ -1,6 +1,6 @@
-X-Makina Assembler - Version XM-23p Single Pass+ Assembler - Release 24.05.16
-Input file name: Addition.asm
-Time of assembly: Fri 24 May 2024 04:36:01 
+X-Makina Assembler - Version XM-23P Single Pass+ Assembler - Release 02.04.17
+Input file name: Add02.asm
+Time of assembly: Thu 23 May 2024 23:55:53 
   1	    	     	;
   2	    	     	; Addition examples
   3	    	     	;
@@ -46,31 +46,20 @@ Time of assembly: Fri 24 May 2024 04:36:01
  43	    	     	;
  44	    	     		org	#10a0
  45	    	     	;
- 46	0010	0FFE	InVal	word	#0FFE
+ 46	10A0	0FFE	InVal	word	#0FFE
  47	    	     	;
- 48	0012	0000	OutVal	bss	$2	; Reserve two bytes
+ 48	10A2	0000	OutVal	bss	$2	; Reserve two bytes
  49	    	     	;
  50	    	     		end	Main	; Start of program (S9 record)
 
 Successful completion of assembly - 2P
 
 ** Symbol table **
-
-Constants (Equates)
 Name                               	Type	Value	Decimal
-
-Labels (Code)
-Name                               	Type	Value	Decimal
+OutVal                             	REL	10A2	4258	PRI
 Done                               	REL	1014	4116	PRI
 InVal                              	REL	10A0	4256	PRI
 Main                               	REL	1000	4096	PRI
-
-Labels (Data)
-Name                               	Type	Value	Decimal
-OutVal                             	REL	0012	18	PRI
-
-Registers
-Name                               	Type	Value	Decimal
 R7                                 	REG	0007	7	PRI
 R6                                 	REG	0006	6	PRI
 R5                                 	REG	0005	5	PRI
@@ -80,5 +69,5 @@ R2                                 	REG	0002	2	PRI
 R1                                 	REG	0001	1	PRI
 R0                                 	REG	0000	0	PRI
 
-.XME file: C:\Users\Decartes\Documents\GitHub\X-Makina-23P-Loader\cmake-build-debug\Addition.xme
+.XME file: C:\Users\Decartes\Documents\GitHub\X-Makina-23P-Loader\cmake-build-debug\Add02.xme
 

@@ -68,7 +68,8 @@
 			[
 				0,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -107,7 +108,8 @@
 			[
 				0,
 				2,
-				3
+				3,
+				4
 			]
 		},
 		{
@@ -141,6 +143,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "srecord.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "manager.c",
 			"sourceGroupIndex" : 0
 		}
 	],

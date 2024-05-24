@@ -9,4 +9,5 @@ add_executable(X_Makina_23P_Loader
         loader.c
         loader.h
         memory.c
-        srecord.c)
+        srecord.c
+        manager.c)

@@ -70,6 +70,13 @@ build CMakeFiles/X_Makina_23P_Loader.dir/srecord.c.obj: C_COMPILER__X_Makina_23P
   OBJECT_DIR = CMakeFiles\X_Makina_23P_Loader.dir
   OBJECT_FILE_DIR = CMakeFiles\X_Makina_23P_Loader.dir
 
+build CMakeFiles/X_Makina_23P_Loader.dir/manager.c.obj: C_COMPILER__X_Makina_23P_Loader_unscanned_Debug C$:/Users/Decartes/Documents/GitHub/X-Makina-23P-Loader/manager.c || cmake_object_order_depends_target_X_Makina_23P_Loader
+  DEP_FILE = CMakeFiles\X_Makina_23P_Loader.dir\manager.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Decartes/Documents/GitHub/X-Makina-23P-Loader/.
+  OBJECT_DIR = CMakeFiles\X_Makina_23P_Loader.dir
+  OBJECT_FILE_DIR = CMakeFiles\X_Makina_23P_Loader.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target X_Makina_23P_Loader
@@ -78,7 +85,7 @@ build CMakeFiles/X_Makina_23P_Loader.dir/srecord.c.obj: C_COMPILER__X_Makina_23P
 #############################################
 # Link the executable X_Makina_23P_Loader.exe
 
-build X_Makina_23P_Loader.exe: C_EXECUTABLE_LINKER__X_Makina_23P_Loader_Debug CMakeFiles/X_Makina_23P_Loader.dir/loader.c.obj CMakeFiles/X_Makina_23P_Loader.dir/memory.c.obj CMakeFiles/X_Makina_23P_Loader.dir/srecord.c.obj
+build X_Makina_23P_Loader.exe: C_EXECUTABLE_LINKER__X_Makina_23P_Loader_Debug CMakeFiles/X_Makina_23P_Loader.dir/loader.c.obj CMakeFiles/X_Makina_23P_Loader.dir/memory.c.obj CMakeFiles/X_Makina_23P_Loader.dir/srecord.c.obj CMakeFiles/X_Makina_23P_Loader.dir/manager.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\X_Makina_23P_Loader.dir

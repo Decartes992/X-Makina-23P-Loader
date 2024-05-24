@@ -1,6 +1,3 @@
-//
-// Created by Decartes on 2024-05-23.
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,33 +10,46 @@ void loadSRecord(const char *filename) {
         return;
     }
 
-    char line[100];
+    char line[LINE_SIZE];
     while (fgets(line, sizeof(line), file)) {
         if (line[0] != 'S') continue; // Not an S-Record
 
-        int count, address, checksum;
-        sscanf(line + 2, "%2x%4x", &count, &address);
-
-        if (line[1] == '0') {
+        int count, address, loopCount;
+        sscanf(line + BYTE_SIZE, "%2x%4x", &count, &address);
+        loopCount = (count -3) * BYTE_SIZE;
+        if (line[ADDRESS_SHIFT] == '0') {
             // S0 record: header
-            printf("Header: %s\n", line + 8);
-        } else if (line[1] == '1') {
-            // S1 record: IMEM data
-            for (int i = 0; i < count - 3; i += 2) {
-                unsigned int data;
-                sscanf(line + 8 + i * 2, "%2x", &data);
-                IMEM[address++] = data;
+            printf("\nHeader (ASCII): ");
+            for (int i = 0; i < loopCount; i += BYTE_SIZE) {
+                unsigned int byte;
+                sscanf(line + HEADER_START + i, "%2x", &byte);
+                printf("%c", byte);
             }
-        } else if (line[1] == '2') {
+            printf("\n\n");
+            printf("Header (Bytes): ");
+            for (int i = 0; i < loopCount + BYTE_SIZE; i += BYTE_SIZE) {
+                unsigned int byte;
+                sscanf(line + HEADER_START + i, "%2x", &byte);
+                printf("%02X ", byte);
+            }
+            printf("\n\n");
+        } else if (line[ADDRESS_SHIFT] == '1') {
+            // S1 record: IMEM data
+            for (int i = 0; i < loopCount; i += ASCII_SIZE) {
+                unsigned int data;
+                sscanf(line + HEADER_START + i, "%4x", &data);
+                IMEM[(address >> IMEM_SHIFT) + (i >> BYTE_SIZE)] = (data >> DATA_SHIFT) | ((data & BYTE_MASK) << DATA_SHIFT); // Correctly handle high and low byte
+            }
+        } else if (line[ADDRESS_SHIFT] == '2') {
             // S2 record: DMEM data
             for (int i = 0; i < count - 3; i++) {
                 unsigned int data;
-                sscanf(line + 8 + i * 2, "%2x", &data);
+                sscanf(line + HEADER_START + i * BYTE_SIZE, "%2x", &data);
                 DMEM[address++] = data;
             }
-        } else if (line[1] == '9') {
+        } else if (line[ADDRESS_SHIFT] == '9') {
             // S9 record: starting address
-            printf("Starting address: %04X\n", address);
+            printf("Starting address: %04X\n\n", address);
         }
     }
     fclose(file);
