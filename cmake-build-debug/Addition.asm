@@ -39,7 +39,7 @@ Main
 ;
 Done	bra	Done
 ;
-; Data
+	data
 ;
 	org	#10a0
 ;
